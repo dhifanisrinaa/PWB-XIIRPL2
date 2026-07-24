@@ -11,36 +11,7 @@
 
     <?php 
         echo "<h3>Soal No 1 Looping I Love PHP</h3>";
-        /* 
-            Soal No 1 
-            Looping I Love PHP
-            Lakukan Perulangan (boleh for/while/do while) sebanyak 20 iterasi. Looping terbagi menjadi dua: Looping yang pertama Ascending (meningkat) 
-            dan Looping yang ke dua menurun (Descending). 
 
-            Output: 
-            LOOPING PERTAMA
-            2 - I Love PHP
-            4 - I Love PHP
-            6 - I Love PHP
-            8 - I Love PHP
-            10 - I Love PHP
-            12 - I Love PHP
-            14 - I Love PHP
-            16 - I Love PHP
-            18 - I Love PHP
-            20- I Love PHP
-            LOOPING KEDUA
-            20 - I Love PHP
-            18 - I Love PHP
-            16 - I Love PHP
-            14 - I Love PHP
-            12 - I Love PHP
-            10 - I Love PHP
-            8 - I Love PHP
-            6 - I Love PHP
-            4 - I Love PHP
-            2 - I Love PHP
-        */
         echo "LOOPING PERTAMA<br>";
 
             for ($i = 1; $i <= 20; $i++) 
@@ -57,8 +28,9 @@
         echo "<br><br>";
         echo "LOOPING KEDUA<br>";
 
-            for ($j = 20; $j >= 1; $j--) {
-                echo "$j - I Love PHP<br>";
+            for ($j = 20; $j >= 1; $j--) 
+                {
+                    echo "$j - I Love PHP<br>";
                 }
 
         echo "<h3>Soal No 2 Looping Array Modulo </h3>";
@@ -72,11 +44,15 @@
         $numbers = [18, 45, 29, 61, 47, 34];
         echo "array numbers: ";
         print_r($numbers);
-        // Lakukan Looping di sini
-
+        $rest = [];
         echo "<br>";
         echo "Array sisa baginya adalah:  "; 
         echo "<br>";
+        foreach ($numbers as $number) 
+            {
+                $rest[] = $number % 5;
+            }
+        print_r($rest);
 
         echo "<h3> Soal No 3 Looping Asociative Array </h3>";
         /* 
@@ -99,22 +75,32 @@
             ['004', 'Mouse Jerry', 30000, 'Mouse yang disukai kucing', 'jerry.jpeg']
         ];
         
-        // Output: 
+        $itemAssociative = [];
+
+        foreach ($items as $item) {
+            $itemAssociative[] = [
+                "id"          => $item[0],
+                "name"        => $item[1],
+                "price"       => $item[2],
+                "description" => $item[3],
+                "source"      => $item[4]
+            ];
+        }
+        foreach ($itemAssociative as $data) {
+            print_r($data);
+            echo "<br>";
+        }
         
         echo "<h3>Soal No 4 Asterix </h3>";
-        /* 
-            Soal No 4
-            Asterix 5x5
-            Tampilkan dengan looping dan echo agar menghasilkan kumpulan bintang dengan pola seperti berikut: 
-            Output: 
-            * 
-            * * 
-            * * * 
-            * * * * 
-            * * * * *
-        */
+        
         echo "Asterix: ";
-        echo "<br>";        
+        echo "<br>";      
+        for ($i = 1; $i <= 5; $i++) {
+            for ($j = 1; $j <= $i; $j++) {
+                echo "* ";
+            }
+        echo "<br>";
+        }
     ?>
 
 </body>
