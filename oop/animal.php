@@ -1,7 +1,8 @@
 <?php
-class Animal
+
+class Animal 
 {
-  public string $name;
+    public string $name;
     public int $legs;
     public string $cold_blooded;
 
@@ -12,4 +13,5 @@ class Animal
         $this->cold_blooded = $cold_blooded;
     }
 }
+
 ?>
